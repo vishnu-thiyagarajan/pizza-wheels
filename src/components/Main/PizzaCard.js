@@ -8,7 +8,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { useSelector, useDispatch } from "react-redux";
-import { addIndex } from "../../redux";
 
 const useStyles = makeStyles({
   media: {
@@ -39,9 +38,7 @@ const useStyles = makeStyles({
 });
 
 export default function PizzaCard(props) {
-  const dispatch = useDispatch();
-  const { _id, name, category, description, imageUrl, price, veg } =
-    props.pizza;
+  const { name, description, price, veg } = props.pizza;
   const classes = useStyles();
   const imgs = useSelector((state) => state.pizza.imgs);
   return (

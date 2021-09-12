@@ -24,7 +24,7 @@ function Category(props) {
   });
   React.useEffect(() => {
     if (inView) dispatch(setInView(props.name));
-  }, [inView]);
+  }, [inView, props.name, dispatch]);
   const pizzas = useSelector((state) => state.pizza.pizzas);
   return (
     <>
