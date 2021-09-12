@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../services/Axios/Axios";
 import {
   LOGIN_USER_REQUEST,
   LOGIN_USER_SUCCESS,

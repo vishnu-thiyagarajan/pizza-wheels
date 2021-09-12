@@ -1,20 +1,17 @@
 import React from "react";
-import { resetState, LoginUser } from "../../redux";
-import { useSelector, useDispatch } from "react-redux";
+
+import SearchAppBar from "../AppBar/SearchAppBar";
+import Collections from "../Drawer/Collections";
+import ListPizzas from "../Main/ListPizzas";
 
 function Home() {
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.user);
-  const login = (email, password, keepMeLoggedIn) =>
-    dispatch(LoginUser(email, password, keepMeLoggedIn));
+  // const dispatch = useDispatch();
+  // const pizza = useSelector((state) => state.pizza.pizza);
   return (
     <>
-      <div>Home page</div>
-      <div>{JSON.stringify(user)}</div>
-      <button onClick={() => login("mrtvishnu@gmail.com", "password", true)}>
-        Login
-      </button>
-      <button onClick={() => dispatch(resetState())}>Reset</button>
+      <SearchAppBar />
+      <Collections />
+      <ListPizzas />
     </>
   );
 }
