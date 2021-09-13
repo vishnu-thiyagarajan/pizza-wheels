@@ -35,11 +35,7 @@ export default function ListPizzas() {
     <>
       <main className={classes.content}>
         {categoryList.map((category, index) => (
-          <div style={{ marginTop: "20px" }} key={index}>
-            <h2 id={category}>{category}</h2>
-            <Category name={category} />
-            <br />
-          </div>
+          <Category name={category} key={index} />
         ))}
       </main>
     </>

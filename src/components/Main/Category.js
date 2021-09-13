@@ -20,20 +20,21 @@ function Category(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
   const [ref, inView] = useInView({
-    threshold: 0.1,
+    threshold: 1,
   });
   React.useEffect(() => {
     if (inView) dispatch(setInView(props.name));
   }, [inView, props.name, dispatch]);
   const pizzas = useSelector((state) => state.pizza.pizzas);
   return (
-    <>
-      <div ref={ref} className={classes.content}>
+    <div ref={ref} style={{ marginTop: "20px" }}>
+      <h2 id={props.name}>{props.name}</h2>
+      <div className={classes.content}>
         {pizzas[props.name].map((pizza, index) => (
           <PizzaCard key={index} pizza={pizza} index={index} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
